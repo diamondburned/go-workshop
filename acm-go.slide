@@ -1,0 +1,70 @@
+# Beginner Go Programming
+
+Diamond
+ACM at CSUF
+
+// - What is Go, made by who
+// - What is Go commonly used for
+// - Some cool features of Go, 1 demo slide per feature
+//   - Go can do basic stuff: JSON REST API (http.ServeMux)
+//   - JSON serialization w/ structs using struct tags built-in
+//   - GoDoc: awesome consistent documentation for ALL packages
+// - How to try/install Go, 2 ways
+//   - Go Playground (good for following along)
+//   - Go installation (recommend WSL2 w/ PATH installation)
+//     - Setting up Go environment (vscode + gopls + staticcheck)
+//     - Go tool usage (go build/run, go test)
+// - Quick Go language demo
+//   - Small syntax stuff
+//   - Go data types: similar to C++ but much simpler
+//     - Capitalization for exports, strict, structs w/ tags, etc.
+//     - Goroutines: extremely easy multithreading, HTTP is multithreaded by
+//     - default (unlike JS), basic concurrency example
+//   - If we have time:
+//     - Testing
+//     - Profiling (pprof), awesome feature to debug slow code
+// - Go Tour, easy self-learn
+
+## A Taste of Go
+
+.play cmd/hello/main.go
+
+## What is a Go?
+
+Go (at [go.dev](https://go.dev)) is a programming language designed by Robert
+Griesemer, Rob Pike and Ken Thompson at Google.
+
+The big names:
+
+- **Robert Griesemer** worked on the V8 JavaScript engine which powers
+  Chrome and Node.JS
+- **Ken Thompson** implemented the first Unix and helped create the C
+  programming language
+- **Rob Pike** was part of the Unix team and created UTF-8 with Ken Thompson.
+
+## What can Go do?
+
+Anything! Go is a **general-purpose** programming language.
+
+Go is commonly used for:
+
+- Backend/web development (REST APIs, microservices, etc.)
+- DevOps (CI/CD, automation, tooling, etc.)
+- Networking (TCP/UDP, etc.)
+
+Go cannot:
+
+- Write an operating system (it needs kernel APIs)
+- Help you write the shortest code (it's meant to encourage good
+  practices and readability)
+- Evaluate Go code (it's compiled, but there are 3rd-party Go interpreters)
+
+## Here are some cool features of Go:
+
+## Go can serve JSON REST APIs
+
+.play cmd/rest/main.go /func main(.|\n)*/
+
+## It doesn't trip up on JSON serialization!
+
+.play cmd/rest2/main.go /func main(.|\n)*/
