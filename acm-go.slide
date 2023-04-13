@@ -208,6 +208,60 @@ easier in Go.
 	# test all packages
 	go test ./...
 
+## Let's set up Go!
+
+## Installing Go
+
+	switch operatingSystem {
+	case Ubuntu22_04, Ubuntu22_10: // or later or WSL2
+		// You have Go 1.18 or later! Just install it using apt.
+		sh(`sudo apt install golang-go`)
+	case UbuntuOlder:
+		// You'll need to use a PPA to get a newer version of Go.
+		sh(`sudo add-apt-repository ppa:longsleep/golang-backports 
+			sudo apt update
+			sudo apt install golang-go`)
+	case MacOS_Homebrew:
+		// You can use Homebrew to install Go if you have it.
+		sh(`brew install go`)
+	case MacOS, Windows:
+		// You can download Go from the official website. Install it like a regular
+		// package. See go.dev/doc/install for more information.
+		open("https://go.dev/dl/")
+	default:
+		// Just ask me! But also check the website.
+		open("https://go.dev/dl/")
+	}
+
+## Visual Studio Code
+
+Just install this extension! If prompted to install the language server, do so.
+
+<div align="center" style="height: 85%">
+	<img src="images/vscode.png" width="80%">
+</div>
+
+## Vim
+
+Install `gopls`:
+
+```sh
+echo 'PATH="$PATH:$(go env GOPATH)/bin"' >> ~/.bashrc # or any shellrc
+go install golang.org/x/tools/gopls@latest
+```
+
+Then add `gopls` to any of your LSP plugins (e.g. CoC, ALE, Neovim LSP, etc.)
+
+If you have any issues, just ask me! I use Vim, BTW.
+
+## Check that your environment works
+
+Simply make sure that your autocompletion works:
+
+<div align="center" style="height: 85%">
+	<img src="images/completion.png" width="80%">
+</div>
+
 ## Let's make a REST API!
 
 ## What we'll do
