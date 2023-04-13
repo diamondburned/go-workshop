@@ -6,7 +6,6 @@ import (
 	"net/http"
 	"os"
 	"os/exec"
-	"time"
 )
 
 func sh(cmd string) {
@@ -20,21 +19,16 @@ func main() {
 	r := http.NewServeMux()
 	r.HandleFunc("/", handleIndex)
 	go func() { log.Fatalln(http.ListenAndServe(":12345", r)) }()
-	sh("sleep 0.1 && curl -s -D - localhost:12345")
+
+	sh("httpie -p hb localhost:12345")
 }
 
 type indexResponse struct {
-	Time    time.Time `json:"time"`
-	Message string    `json:"message"`
+	Message string `json:"message"` // must be capitalized, more on this later
 }
 
 func handleIndex(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-
 	j := json.NewEncoder(w)
-	j.SetIndent("", "  ") // make it pretty
-	j.Encode(indexResponse{
-		Time:    time.Now(),
-		Message: "Hello, 世界!",
-	})
+	j.Encode(indexResponse{Message: "Hello, 世界!"})
 }

@@ -1,0 +1,228 @@
+/*
+                        _______
+                       /       \
+                      .==.    .==.
+                     ((  ))==((  ))
+                    / "=="    "=="\
+                   /____|| || ||___\
+       ________     ____    ________  ___    ___
+       |  ___  \   /    \   |  ___  \ |  |  /  /
+       |  |  \  \ /  /\  \  |  |  \  \|  |_/  /
+       |  |   )  /  /__\  \ |  |__/  /|  ___  \
+       |  |__/  /  ______  \|  ____  \|  |  \  \
+_______|_______/__/ ____ \__\__|___\__\__|___\__\____
+|  ___  \ |  ____/ /    \   |  ___  \ |  ____|  ___  \
+|  |  \  \|  |___ /  /\  \  |  |  \  \|  |___|  |  \  \
+|  |__/  /|  ____/  /__\  \ |  |   )  |  ____|  |__/  /
+|  ____  \|  |__/  ______  \|  |__/  /|  |___|  ____  \
+|__|   \__\____/__/      \__\_______/ |______|__|   \__\
+                https://darkreader.org
+*/
+
+/*! Dark reader generated CSS | Licensed under MIT https://github.com/darkreader/darkreader/blob/main/LICENSE */
+
+/* User-Agent Style */
+html {
+    background-color: #1b1d1d !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body, input, textarea, select, button, dialog {
+    background-color: #1b1d1d;
+}
+html, body, input, textarea, select, button {
+    border-color: #696257;
+    color: #cdcbc8;
+}
+a {
+    color: #3282e0;
+}
+table {
+    border-color: #4e5457;
+}
+::placeholder {
+    color: #9f9990;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #3d4106 !important;
+    color: #cdcbc8 !important;
+}
+::-webkit-scrollbar {
+    background-color: #222425;
+    color: #999389;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #414648;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #51575a;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #44494c;
+}
+::-webkit-scrollbar-corner {
+    background-color: #1b1d1d;
+}
+* {
+    scrollbar-color: #414648 #222425;
+}
+::selection {
+    background-color: #064898 !important;
+    color: #cdcbc8 !important;
+}
+::-moz-selection {
+    background-color: #064898 !important;
+    color: #cdcbc8 !important;
+}
+
+/* Invert Style */
+.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(90%) contrast(85%) !important;
+}
+
+/* Variables Style */
+:root {
+   --darkreader-neutral-background: #171819;
+   --darkreader-neutral-text: #bfbcb7;
+   --darkreader-selection-background: #064898;
+   --darkreader-selection-text: #cdcbc8;
+}
+
+/* Modified CSS */
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion,
+.hljs-meta {
+    color: rgb(141, 133, 123);
+}
+@media screen {
+    body {
+        background-color: rgba(6, 6, 6, 0);
+        background-image: radial-gradient(500px,
+        rgb(34, 36, 38) 0%,
+        rgb(59, 63, 65) 100%);
+    }
+    .slides > article {
+        background-color: rgb(27, 29, 29);
+        border-color: rgba(126, 118, 105, 0.3);
+    }
+}
+.slides > article {
+    color: rgb(205, 203, 200);
+    text-shadow: rgba(6, 6, 6, 0.1) 0px 1px 1px;
+}
+a {
+    color: rgb(76, 158, 224);
+    text-decoration-color: currentcolor;
+}
+a:visited {
+    color: rgba(76, 158, 224, 0.75);
+}
+a:hover {
+    color: rgb(205, 203, 200);
+}
+h1 {
+    color: rgb(177, 173, 167);
+}
+h2 {
+    color: rgb(177, 173, 167);
+}
+h3 {
+    color: rgb(177, 173, 167);
+}
+pre {
+    background-color: rgb(34, 36, 38);
+    background-image: none;
+    border-color: rgb(55, 59, 61);
+    color: rgb(205, 203, 200);
+}
+code {
+    color: rgb(205, 203, 200);
+}
+td,
+th {
+    border-color: rgb(55, 59, 61);
+}
+.pagenumber {
+    color: rgb(142, 135, 125);
+}
+pre {
+    outline-color: transparent;
+}
+div.output {
+    background-color: rgb(27, 29, 29);
+    background-image: none;
+}
+div.output pre {
+    background-color: rgba(6, 6, 6, 0);
+    background-image: none;
+    border-color: currentcolor;
+}
+div.output .stdout,
+div.output pre {
+    color: rgb(191, 188, 184);
+}
+div.output .stderr,
+div.output .error {
+    color: rgb(224, 148, 148);
+}
+div.output .system,
+div.output .exit {
+    color: rgb(224, 201, 100);
+}
+iframe {
+    border-color: currentcolor;
+}
+figcaption {
+    color: rgb(150, 143, 134);
+}
+#help {
+    color: rgb(205, 203, 200);
+    background-color: rgb(6, 6, 6);
+    background-image: none;
+}
+
+/* Override Style */
+.vimvixen-hint {
+    background-color: #704d00 !important;
+    border-color: #bf9d17 !important;
+    color: #d6cdb1 !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #133844 !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #09222a !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #0f0f0f !important;
+}
+.tou-uknfeu {
+    background-color: #241909 !important;
+}
+.tou-6i3zyv {
+    background-color: #1c5163 !important;
+}

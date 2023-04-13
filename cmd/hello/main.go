@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	fmt.Println("The time is now", time.Now().Format(time.Kitchen))
+	fmt.Println("The time is now", time.Now())
 	fmt.Println("This slideshow is made in Go!")
 }

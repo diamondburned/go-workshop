@@ -27,7 +27,9 @@ ACM at CSUF
 
 ## A Taste of Go
 
-.play cmd/hello/main.go
+.play -edit cmd/hello/main.go
+
+Look at how fast it compiles!
 
 ## What is a Go?
 
@@ -44,7 +46,7 @@ The big names:
 
 ## What can Go do?
 
-Anything! Go is a **general-purpose** programming language.
+(Almost) anything! Go is a **general-purpose** programming language.
 
 Go is commonly used for:
 
@@ -59,12 +61,182 @@ Go cannot:
   practices and readability)
 - Evaluate Go code (it's compiled, but there are 3rd-party Go interpreters)
 
+## Trying Go
+
+```go
+if tryInBrowser {
+	// You can run code in your browser! This is good for following along!
+	open("https://go.dev/play")
+} else {
+	// You can manually install Go instead.
+	// We'll go over this later during the workshop.
+	open("https://go.dev/dl")
+}
+```
+
 ## Here are some cool features of Go:
+
+## Go automatically imports packages for you!
+
+<div align="center" style="height: 85%">
+	<video src="images/goimports-demo.webm" loop autoplay></video>
+</div>
+
+## Go has documentation for ALL open-source packages
+
+Simply push it to a public repository (e.g. on GitHub) and it will be
+automatically generated.
+
+.image images/chi-docs.jpg
+
+## Go has no exceptions
+
+Error checking is done by returning a value of type `error`:
+
+.play cmd/errnil/main.go /func(.|\n)*/
+
+It's very explicit what can and cannot error out:
+
+	                          vvvvv
+	func Atoi(s string) (int, error)
 
 ## Go can serve JSON REST APIs
 
+We can do this with just the built-in standard library!
+
 .play cmd/rest/main.go /func main(.|\n)*/
 
-## It doesn't trip up on JSON serialization!
+// ## It doesn't trip up on bad JSON!
+// 
+// .play cmd/rest2/main.go /func main(.|\n)*/
+// 
+// ## ...unlike JavaScript
+// 
+// .play cmd/rest2/main.ts /^serve(.|\n)*/
 
-.play cmd/rest2/main.go /func main(.|\n)*/
+## X in Y minutes, Y=Go
+
+## Go is statically typed
+
+	var x int = 5
+	var y = 5 // type is inferred to be int
+	fmt.Println(x, y) // 5 5
+	
+	z := 5 // shorthand "walrus" operator
+	fmt.Println(z) // 5
+	
+	z = "hello" // error! z is an int
+	
+	// a function must have types, like C++
+	// we can write (x, y int) instead of (x int, y int)
+	// we can only define functions OUTSIDE of a function!
+	func add(x, y int) int { return x + y }
+	add(5, 6) // 11
+	
+	// addx is like add, but it's a first-class function
+	// we can define this inside any function
+	addx := func(x, y int) int { return x + y }
+	addx(5, 6) // 11
+
+## Go has functions, structs and methods
+
+Like C++ classes, but much simpler!
+
+	type Person struct {
+		Name string
+		Age  int
+	}
+	
+	func (p Person) SayHello() {
+		fmt.Println("Hello, my name is", p.Name)
+	}
+	
+	func SayHello(p Person) {
+		fmt.Println("Hello, my name is", p.Name)
+	}
+	
+	func main() {
+		p := Person{Name: "John", Age: 20} // struct initialization
+		p.SayHello() // Output: Hello, my name is John
+		SayHello(p) // Output: Hello, my name is John
+	}
+
+## Go has interfaces
+
+Interfaces define what methods we want from a type. It is a basic form of
+polymorphism.
+
+We can borrow our `Person` class earlier:
+
+.play cmd/interfaces1/main.go /BEGIN OMIT/,/END OMIT/
+
+## Go has interfaces
+
+or be a `Cat`:
+
+.play cmd/interfaces2/main.go /type Cat(.|\n)*/
+
+## Go has type-assertions
+
+.play cmd/interfaces3/main.go /func sayHelloWithEmojis(.|\n)*/
+
+## Go has defer
+
+`defer` marks a function to be called when the current function exits. It's
+called similarly to a stack.
+
+.play cmd/defer/main.go /func main(.|\n)*/
+
+## Go has goroutines
+
+Goroutines are like threads, but they're more lightweight. They're also a lot
+easier in Go.
+
+.play cmd/goros/main.go /func main(.|\n)*/
+
+## Go CLI reference
+
+	# initialize a new Go project
+	go mod init github.com/$YOUR_USERNAME/$YOUR_PROJECT_NAME
+
+	# run a Go program
+	go run .
+
+	# build a Go program
+	go build
+
+	# test all packages
+	go test ./...
+
+## Let's make a REST API!
+
+## What we'll do
+
+We'll pretend we're Jeff Bezos and make a REST API for our online bookstore.
+
+Our bookstore will have:
+
+- A REST API for getting, creating, updating and deleting books
+- A SQLite database to store our books
+- Unit tests for our API
+
+## Cloning
+
+Open the demo `bookstore` project:
+
+	git clone https://github.com/diamondburned/acm-go-present
+	cd acm-go-present/cmd/bookstore
+
+## Project Structure
+
+	.
+	├── bookstore/      -- folder encompassing the bookstore
+	│   ├── api/          -- REST API handlers
+	│   ├── bookstore.go  -- data types and models
+	│   └── db/           -- SQLite store implementation
+	├── go.mod
+	├── go.sum
+	├── main.go         -- main server program
+	└── README.md
+
+## Terminal Time!

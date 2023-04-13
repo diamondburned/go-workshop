@@ -20,7 +20,9 @@ func main() {
 	r := http.NewServeMux()
 	r.HandleFunc("/echo", handleEcho)
 	go func() { log.Fatalln(http.ListenAndServe(":12345", r)) }()
-	sh(`sleep 0.1 && curl -s -X POST -d '{}' http://localhost:12345/echo`)
+
+	// POST to the endpoint with a null body.
+	sh(`httpie -p hb POST http://localhost:12345/echo <<< null`)
 }
 
 type echoRequest struct {
@@ -35,5 +37,5 @@ func handleEcho(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
-	fmt.Printf("/echo: %q\n", req.Message)
+	fmt.Printf("Go says %q\n", req.Message)
 }
