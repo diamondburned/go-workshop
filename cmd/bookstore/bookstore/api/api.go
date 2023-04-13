@@ -6,7 +6,7 @@ import (
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
-	"libdb.so/acm-go-present/cmd/bookstore/bookstore"
+	"libdb.so/go-workshop/cmd/bookstore/bookstore"
 )
 
 // BookstoreHandler is the handler for the bookstore API.

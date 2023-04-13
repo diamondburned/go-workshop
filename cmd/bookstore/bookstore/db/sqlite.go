@@ -6,8 +6,8 @@ import (
 	"errors"
 	"fmt"
 
-	"libdb.so/acm-go-present/cmd/bookstore/bookstore"
-	"libdb.so/acm-go-present/cmd/bookstore/bookstore/db/sqlite"
+	"libdb.so/go-workshop/cmd/bookstore/bookstore"
+	"libdb.so/go-workshop/cmd/bookstore/bookstore/db/sqlite"
 
 	// Import the SQLite driver.
 	_ "modernc.org/sqlite"

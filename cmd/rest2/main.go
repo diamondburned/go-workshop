@@ -7,14 +7,9 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"os/exec"
-)
 
-func sh(cmd string) {
-	c := exec.Command("sh", "-c", cmd)
-	c.Stdout = os.Stdout
-	c.Run()
-}
+	"libdb.so/go-workshop/internal/httprint"
+)
 
 func main() {
 	r := http.NewServeMux()
@@ -22,7 +17,7 @@ func main() {
 	go func() { log.Fatalln(http.ListenAndServe(":12345", r)) }()
 
 	// POST to the endpoint with a null body.
-	sh(`httpie -p hb POST http://localhost:12345/echo <<< null`)
+	httprint.POST("localhost:12345/echo", "null")
 }
 
 type echoRequest struct {

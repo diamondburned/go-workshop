@@ -9,8 +9,8 @@ import (
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
-	"libdb.so/acm-go-present/cmd/bookstore/bookstore/api"
-	"libdb.so/acm-go-present/cmd/bookstore/bookstore/db"
+	"libdb.so/go-workshop/cmd/bookstore/bookstore/api"
+	"libdb.so/go-workshop/cmd/bookstore/bookstore/db"
 )
 
 var addr = ":8080"

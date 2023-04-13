@@ -9,7 +9,7 @@ import (
 	"testing"
 
 	"github.com/alecthomas/assert/v2"
-	"libdb.so/acm-go-present/cmd/bookstore/bookstore"
+	"libdb.so/go-workshop/cmd/bookstore/bookstore"
 )
 
 // TestBookstoreHandler tests... BookstoreHandler. The convention is to have
