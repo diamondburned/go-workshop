@@ -47,4 +47,8 @@ pkgs.mkShell {
 		nodePackages.prettier
 		(pkgs.writeShellScriptBin "deno-run" "deno run -A $@")
 	];
+
+	passthru = {
+		inherit present httpie;
+	};
 }
