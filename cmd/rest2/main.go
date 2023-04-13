@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"os"
 
-	"libdb.so/go-workshop/internal/httprint"
+	"libdb.so/go-workshop/lib/httprint"
 )
 
 func main() {

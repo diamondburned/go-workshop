@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"libdb.so/go-workshop/internal/httprint"
+	"libdb.so/go-workshop/lib/httprint"
 )
 
 func main() {
