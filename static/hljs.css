@@ -56,6 +56,6 @@ div.output .exit {
 .hljs-type,
 .hljs-name,
 .hljs-strong {
-  color: #000 !important;
+  color: #000;
   font-weight: 700 !important;
 }
