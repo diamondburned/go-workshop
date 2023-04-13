@@ -1,39 +1,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600;700;800;900&display=swap");
 
-pre, code {
-	font-weight: 500 !important;
-	font-family: Inconsolata, monospace !important;
-	letter-spacing: -0.5px !important;
+pre,
+code {
+  font-weight: 500 !important;
+  font-family: Inconsolata, monospace !important;
+  letter-spacing: -0.5px !important;
 }
 
-h1, h2, h3 {
-	color: #eee !important;
+h1,
+h2,
+h3 {
+  color: #000 !important;
 }
 
-.slides > article, pre {
-	color: #ddd !important;
+.slides > article,
+.output pre,
+pre {
+  color: #222 !important;
 }
 
 pre,
 div.output {
-	border-radius: 10px;
+  border-radius: 10px;
 }
 
 div.output {
-	border: 1px solid rgb(55, 59, 61);
+  border: 1px solid #0003 !important;
+  background-color: #eee !important;
+}
+
+div.output .system,
+div.output .exit {
+  color: rgb(159, 89, 28) !important;
 }
 
 [align="center"] {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .hljs-comment,
 .hljs-quote,
 .hljs-deletion,
 .hljs-meta {
-	color: #888 !important;
+  color: #666 !important;
 }
 
 .hljs-keyword,
@@ -45,6 +56,6 @@ div.output {
 .hljs-type,
 .hljs-name,
 .hljs-strong {
-	color: #fff;
-    font-weight: 700 !important;
+  color: #000 !important;
+  font-weight: 700 !important;
 }
