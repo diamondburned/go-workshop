@@ -39,6 +39,11 @@ div.output .exit {
   color: rgb(159, 89, 28) !important;
 }
 
+div.output .stderr,
+div.output .error {
+  color: rgb(202, 54, 54) !important;
+}
+
 [align="center"] {
   display: flex !important;
   align-items: center !important;
