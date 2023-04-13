@@ -24,6 +24,11 @@ pre {
   color: #222 !important;
 }
 
+div.output .stdout,
+div.output pre {
+  color: #222 !important;
+}
+
 pre,
 div.output {
   border-radius: 10px;
