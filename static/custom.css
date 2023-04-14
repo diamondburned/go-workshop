@@ -49,6 +49,22 @@ div.output .error {
   color: rgb(202, 54, 54) !important;
 }
 
+span.url {
+  bottom: 0;
+  left: 10px;
+  position: absolute;
+  font-size: 75%;
+}
+
+span.url a {
+  color: black !important;
+  opacity: 0.5;
+}
+
+span.url a:hover {
+  opacity: 1;
+}
+
 [align="center"] {
   display: flex !important;
   align-items: center !important;

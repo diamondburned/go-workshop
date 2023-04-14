@@ -34,6 +34,11 @@
         {{end}}
       </article>
 
+	  {{ $url := "" }}
+	  {{ if .OldURL }}
+	  {{ $url = index .OldURL 0 }}
+	  {{ end }}
+
   {{range $i, $s := .Sections}}
   <!-- start of slide {{$s.Number}} -->
       <article {{$s.HTMLAttributes}}>
@@ -43,6 +48,9 @@
       {{else}}
         <h2>{{$s.Title}}</h2>
       {{end}}
+	  {{ if $url }}
+	  <span class="url"><a href="://{{ $url }}">{{ $url }}</a></span>
+	  {{ end }}
       <span class="pagenumber">{{pagenum $s 1}}</span>
       </article>
   <!-- end of slide {{$s.Number}} -->
@@ -74,8 +82,7 @@
 		document.querySelectorAll("div.code pre").forEach(pre => hljs.highlightBlock(pre))
 	</script>
   </body>
-  <link rel='stylesheet' href='/static/DarkReader.css'>
-  <link rel='stylesheet' href='/static/hljs.css'>
+  <link rel='stylesheet' href='/static/custom.css'>
 </html>
 {{end}}
 
