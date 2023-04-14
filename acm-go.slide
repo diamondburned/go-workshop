@@ -55,15 +55,15 @@ The big names:
 Go is commonly used for:
 
 - Backend/web development (REST APIs, microservices, etc.)
-- DevOps (CI/CD, automation, tooling, etc.)
-- Networking (TCP/UDP, etc.)
+- DevOps (CI/CD, automation, etc.)
+- Tools (CLI, TUI, scripts, etc.)
+- Bots (Discord bot, Twitter bot, etc.)
 
 Go cannot:
 
 - Write an operating system (it needs kernel APIs)
 - Help you write the shortest code (it's meant to encourage good
   practices and readability)
-- Evaluate Go code (it's compiled, but there are 3rd-party Go interpreters)
 
 ## Trying Go
 
