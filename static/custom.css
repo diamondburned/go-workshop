@@ -49,14 +49,7 @@ div.output .error {
   color: rgb(202, 54, 54) !important;
 }
 
-span.url {
-  bottom: 0;
-  left: 10px;
-  position: absolute;
-  font-size: 75%;
-}
-
-span.url a {
+span.pagenumber a {
   color: black !important;
   opacity: 0.5;
 }

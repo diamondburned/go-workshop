@@ -42,16 +42,20 @@
   {{range $i, $s := .Sections}}
   <!-- start of slide {{$s.Number}} -->
       <article {{$s.HTMLAttributes}}>
-      {{if $s.Elem}}
-        <h3>{{$s.Title}}</h3>
-        {{range $s.Elem}}{{elem $.Template .}}{{end}}
-      {{else}}
-        <h2>{{$s.Title}}</h2>
-      {{end}}
-	  {{ if $url }}
-	  <span class="url"><a href="https://{{ $url }}">{{ $url }}</a></span>
-	  {{ end }}
-      <span class="pagenumber">{{pagenum $s 1}}</span>
+        {{if $s.Elem}}
+          <h3>{{$s.Title}}</h3>
+          {{range $s.Elem}}{{elem $.Template .}}{{end}}
+        {{else}}
+          <h2>{{$s.Title}}</h2>
+        {{end}}
+        <span class="pagenumber">
+		  {{ $page := pagenum $s 1 }}
+		  {{ if eq $url "" }}
+	      {{ pagenum $s 1 }}
+		  {{ else }}
+          <a href="https://{{$url}}#{{$page}}">{{$url}}#{{$page}}</a>
+		  {{ end }}
+	    </span>
       </article>
   <!-- end of slide {{$s.Number}} -->
   {{end}}{{/* of Slide block */}}
