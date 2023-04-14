@@ -1,4 +1,4 @@
-module libdb.so/go-workshop/cmd/bookstore
+module libdb.so/go-workshop/cmd/bookstore-template
 
 go 1.18
 
