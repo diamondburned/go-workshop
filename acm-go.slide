@@ -33,6 +33,8 @@ ACM at CSUF
 
 Look at how fast it compiles!
 
+.image images/gopher-running.jpg
+
 ## What is a Go?
 
 Go (at [go.dev](https://go.dev)) is a programming language designed by Robert
@@ -140,6 +142,30 @@ We can do this with just the built-in standard library!
 	addx := func(x, y int) int { return x + y }
 	addx(5, 6) // 11
 
+## Go has all the basic stuff
+
+	x := []int{1, 2, 3} // slices (aka lists)
+	x = append(x, 4)    // add 4 to the end
+
+	if x[0] == 1 { // if statements
+		fmt.Println("x[0] is 1")
+	} else {
+		fmt.Println("x[0] is not 1")
+	}
+
+	switch x[1] { // switch statements
+	case 1:
+		fmt.Println("x[0] is 1")
+	default:
+		fmt.Println("x[0] is not 1")
+	}
+
+	for i := 0; i < len(x); i++ { fmt.Println(x[i]) } // C-style
+	for i, v := range x { fmt.Println(i, v) }         // Range-based (index, value)
+
+	m := map[string]int{"a": 1, "b": 2} // hash maps (aka dicts)
+	m["c"] = 3
+
 ## Go has functions, structs and methods
 
 Like C++ classes, but much simpler!
@@ -196,19 +222,78 @@ easier in Go.
 
 .play cmd/goros/main.go /func main(.|\n)*/
 
+## Go has packages
+
+In Go, each folder is a package, and all files in the same folder are
+part of the same package.
+
+```
+module example.com/demo // go.mod, needed in each project like package.json
+```
+
+```
+package thing           // thing/whatever.go
+func F1() {}
+```
+
+```
+package thing           // thing/whatever2.go
+func F2() {}
+func f3() {} // lowercase means private (aka "unexported")
+```
+
+```
+package main            // main.go
+
+import "example.com/demo/thing" // imports the ./thing folder (no relative imports!)
+
+func main() {
+	thing.F1()
+	thing.F2()
+	thing.f3() // error! c is unexported
+}
+```
+
+## Go's dependency management is like Node.JS
+
+Initialize a project by making a new directory and running `go mod init`:
+
+	$ mkdir project
+	$ cd project
+	$ go mod init github.com/username/project # this creates a go.mod file
+
+This is not on the Go Playground!
+
+Once a Go "module" is pushed to a public repository, it can be imported by
+anyone else. If a package is in the same module, it will directly use the module
+without downloading it.
+
+To import a package from a module, add an `import` statement to your code:
+
+	//      v-----------repo----------v v-package-v
+	import "github.com/username/project/packagename"
+
 ## Go CLI reference
 
-	# initialize a new Go project
-	go mod init github.com/$YOUR_USERNAME/$YOUR_PROJECT_NAME
+Go's CLI is super simple.
 
-	# run a Go program
-	go run .
+To build the program:
 
-	# build a Go program
-	go build
+```sh
+$ go build
+```
 
-	# test all packages
-	go test ./...
+To run the program:
+
+```sh
+$ go run .
+```
+
+To run all packages' tests:
+
+```sh
+$ go test ./...
+```
 
 ## Let's set up Go!
 
@@ -296,3 +381,16 @@ Open the demo `bookstore` project:
 	└── README.md
 
 ## Terminal Time!
+
+## Thank you for coming!
+
+More resources:
+
+- Go Tour ([go.dev/tour](https://go.dev/tour)), an interactive Go tutorial made
+  by the Go team.
+- Go Playground ([go.dev/tour](https://go.dev/tour), a place to try out short Go
+  codes.
+- Go Workshop ([goworkshop.libdb.so](https://goworkshop.libdb.so)): this slide
+  deck.
+
+.image images/gopher-group.png
