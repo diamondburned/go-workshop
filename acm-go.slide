@@ -106,7 +106,7 @@ Here's [pkg.go.dev/net/http](https://pkg.go.dev/net/http), which is built-in:
 Simply push it to a public repository (e.g. on GitHub) and it will be
 automatically generated.
 
-Here's [pkg.go.dev/github.com/diamondburned/arikawa](https://pkg.go.dev/github.com/diamondburned/arikawa),
+Here's [pkg.go.dev/github.com/diamondburned/arikawa/v3](https://pkg.go.dev/github.com/diamondburned/arikawa/v3),
 which is my Discord library!
 
 <div style="height: 0.5em"></div>
