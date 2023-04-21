@@ -24,9 +24,14 @@ pre {
   color: #222 !important;
 }
 
-div.output .stdout,
-div.output pre {
+div.output div.buttons button {
+  margin-left: 4px;
+}
+
+div.output pre,
+div.output .stdout {
   color: #222 !important;
+  white-space: pre-wrap;
 }
 
 pre,

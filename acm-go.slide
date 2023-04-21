@@ -78,7 +78,7 @@ if tryInBrowser {
 }
 ```
 
-## Here are some cool features of Go:
+## Here are some cool things about Go:
 
 ## Go automatically imports packages for you!
 
@@ -86,12 +86,36 @@ if tryInBrowser {
 	<video src="images/goimports-demo.webm" loop autoplay></video>
 </div>
 
-## Go has documentation for ALL open-source packages
+## Go has documentation for all packages
 
 Simply push it to a public repository (e.g. on GitHub) and it will be
 automatically generated.
 
-.image images/chi-docs.jpg
+Here's [pkg.go.dev/net/http](https://pkg.go.dev/net/http), which is built-in:
+
+<div style="height: 0.5em"></div>
+<div align="center">
+	<img
+		src="images/godoc-nethttp.png" width="750" height="400"
+		style="object-fit: cover; object-position: top;"
+	/>
+</div>
+
+## Go has documentation for all packages
+
+Simply push it to a public repository (e.g. on GitHub) and it will be
+automatically generated.
+
+Here's [pkg.go.dev/github.com/diamondburned/arikawa](https://pkg.go.dev/github.com/diamondburned/arikawa),
+which is my Discord library!
+
+<div style="height: 0.5em"></div>
+<div align="center">
+	<img
+		src="images/godoc-arikawa-state.png" width="750" height="400"
+		style="object-fit: cover; object-position: top;"
+	/>
+</div>
 
 ## Go has no exceptions
 
@@ -117,6 +141,60 @@ We can do this with just the built-in standard library!
 // ## ...unlike JavaScript
 // 
 // .play cmd/rest2/main.ts /^serve(.|\n)*/
+
+## Let's make a REST API!
+
+## What we'll do
+
+We'll pretend we're Jeff Bezos and make a REST API for our online bookstore.
+
+Our bookstore will have:
+
+- A REST API for getting, creating, updating and deleting books
+- A SQLite database to store our books
+- Unit tests for our API
+
+// ## Cloning
+// 
+// Open the demo `bookstore` project:
+// 
+// 	git clone https://github.com/diamondburned/acm-go-present
+// 	cd acm-go-present/cmd/bookstore
+
+## Project Structure
+
+	.
+	├── bookstore/      -- folder encompassing the bookstore
+	│   ├── api/          -- REST API handlers
+	│   ├── bookstore.go  -- data types and models
+	│   └── db/           -- SQLite store implementation
+	├── go.mod
+	├── go.sum
+	├── main.go         -- main server program
+	└── README.md
+
+## Terminal Time!
+
+## Hey, heads up!
+
+This slide deck contains quick Go references! You can find them right after this
+slide, but I won't be going over them in this workshop.
+
+More resources that you can use:
+
+- Go Tour ([go.dev/tour](https://go.dev/tour)), an interactive Go tutorial made
+  by the Go team.
+- Go Playground ([go.dev/tour](https://go.dev/tour)), a place to try out short
+  Go codes.
+- Learn Go in Y minutes ([learnxinyminutes.com/docs/go](https://learnxinyminutes.com/docs/go/)),
+  a quick and condensed reference for Go.
+- Go Workshop ([goworkshop.libdb.so](https://goworkshop.libdb.so)): this slide
+  deck.
+
+.image images/gopher-group.png
+
+// Don't include everything below this in the presentation.
+// It's meant to serve as reference for after the workshop.
 
 ## X in Y minutes, Y=Go
 
@@ -349,50 +427,3 @@ Simply make sure that your autocompletion works:
 	<img src="images/completion.png" width="80%">
 </div>
 
-## Let's make a REST API!
-
-## What we'll do
-
-We'll pretend we're Jeff Bezos and make a REST API for our online bookstore.
-
-Our bookstore will have:
-
-- A REST API for getting, creating, updating and deleting books
-- A SQLite database to store our books
-- Unit tests for our API
-
-## Cloning
-
-Open the demo `bookstore` project:
-
-	git clone https://github.com/diamondburned/acm-go-present
-	cd acm-go-present/cmd/bookstore
-
-## Project Structure
-
-	.
-	├── bookstore/      -- folder encompassing the bookstore
-	│   ├── api/          -- REST API handlers
-	│   ├── bookstore.go  -- data types and models
-	│   └── db/           -- SQLite store implementation
-	├── go.mod
-	├── go.sum
-	├── main.go         -- main server program
-	└── README.md
-
-## Terminal Time!
-
-## Thank you for coming!
-
-More resources:
-
-- Go Tour ([go.dev/tour](https://go.dev/tour)), an interactive Go tutorial made
-  by the Go team.
-- Go Playground ([go.dev/tour](https://go.dev/tour)), a place to try out short
-  Go codes.
-- Learn Go in Y minutes ([learnxinyminutes.com/docs/go](https://learnxinyminutes.com/docs/go/)),
-  a quick and condensed reference for Go.
-- Go Workshop ([goworkshop.libdb.so](https://goworkshop.libdb.so)): this slide
-  deck.
-
-.image images/gopher-group.png
